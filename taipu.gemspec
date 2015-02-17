@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Collections of types.'
   spec.description   = 'Collections of types for Ruby.'
-  spec.homepage      = 'https://github.com/cyril/taipu'
+  spec.homepage      = 'https://github.com/cyril/taipu.rb'
   spec.license       = 'MIT'
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(/^test\//) }
