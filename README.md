@@ -6,7 +6,7 @@
 [![Inline docs](http://inch-ci.org/github/cyril/taipu.rb.svg?branch=master)](http://inch-ci.org/github/cyril/taipu.rb)
 [![Documentation](http://img.shields.io/:yard-docs-38c800.svg)](http://rubydoc.info/gems/taipu/frames)
 
-> taipuation library with some built-in matchers for Ruby.
+> Collections of types for Ruby.
 
 ## Contact
 
