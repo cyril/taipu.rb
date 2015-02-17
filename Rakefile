@@ -15,4 +15,4 @@ namespace :test do
 end
 
 task(:doc_stats) { ruby '-S yard stats' }
-task default: [:test, :doc_stats]
+task default: :test
