@@ -4,17 +4,11 @@ require_relative 'base'
 module Taipu
   # The type number.
   class Number < Base
-    def initialize( min: nil,
-                    max: nil )
-
-      if !min.nil? && !max.nil?
-        fail 'MinIsGreaterThanMaxError' if min > max
-      end
+    def initialize(min: nil, max: nil)
+      fail 'MinIsGreaterThanMaxError' if !min.nil? && !max.nil? && min > max
 
       @min = min
       @max = max
-
-      freeze
     end
 
     def constraints

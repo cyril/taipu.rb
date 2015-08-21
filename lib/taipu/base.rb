@@ -2,10 +2,6 @@
 module Taipu
   # Abstract class.
   class Base
-    def initialize(*)
-      freeze
-    end
-
     def to_h
       {
         type: to_sym
