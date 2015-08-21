@@ -13,6 +13,15 @@ module Taipu
       @pattern  = pattern
     end
 
+    def valid?(value)
+      return false unless value.is_a?(::String)
+      return false if !@minlen.nil? && value.length < @minlen
+      return false if !@maxlen.nil? && value.length > @maxlen
+      return false if !@pattern.nil? && @pattern.match(value).nil?
+
+      true
+    end
+
     def constraints
       {
         minlen:   @minlen,

@@ -39,7 +39,12 @@ Or install it yourself as:
 
 ```ruby
 type = Taipu::Number.new(min: 42)
-type.to_h # => { min: 42, max: nil, type: :number }
+
+type.valid?(100)      # => true
+type.valid?(4)        # => false
+type.valid?('foobar') # => false
+
+type.to_h             # => { min: 42, max: nil, type: :number }
 ```
 
 ## Security

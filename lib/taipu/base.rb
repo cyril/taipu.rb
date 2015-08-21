@@ -1,3 +1,5 @@
+require 'matchi'
+
 # Namespace for the Taipu library.
 module Taipu
   # Abstract class.

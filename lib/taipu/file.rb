@@ -4,5 +4,8 @@ require_relative 'base'
 module Taipu
   # The type file.
   class File < Base
+    def valid?(value)
+      value.is_a?(::IO)
+    end
   end
 end

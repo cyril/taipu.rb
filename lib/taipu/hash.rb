@@ -4,5 +4,8 @@ require_relative 'base'
 module Taipu
   # The type number.
   class Hash < Base
+    def valid?(value)
+      value.is_a?(::Hash)
+    end
   end
 end

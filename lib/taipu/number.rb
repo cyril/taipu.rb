@@ -11,6 +11,14 @@ module Taipu
       @max = max
     end
 
+    def valid?(value)
+      return false unless value.is_a?(::Numeric)
+      return false if !@min.nil? && value < @min
+      return false if !@max.nil? && value > @max
+
+      true
+    end
+
     def constraints
       {
         min: @min,

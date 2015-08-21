@@ -4,5 +4,8 @@ require_relative 'base'
 module Taipu
   # The type boolean.
   class Boolean < Base
+    def valid?(value)
+      value.equal?(true) || value.equal?(false)
+    end
   end
 end
