@@ -2,11 +2,13 @@ require_relative File.join 'support', 'coverage'
 require_relative File.join '..', 'lib', 'taipu'
 require 'spectus'
 
+include Spectus
+
 subject = Taipu::Number.new(min: 42)
 
-Spectus.this { subject.valid?(42) }.MUST :BeTrue
-Spectus.this { subject.valid?(100) }.MUST :BeTrue
-Spectus.this { subject.valid?(4) }.MUST :BeFalse
-Spectus.this { subject.valid?('foo') }.MUST :BeFalse
+it { subject.valid?(42) }.MUST be_true
+it { subject.valid?(100) }.MUST be_true
+it { subject.valid?(4) }.MUST be_false
+it { subject.valid?('foo') }.MUST be_false
 
-Spectus.this { subject.to_h }.MUST Eql: { min: 42, max: nil, type: :number }
+it { subject.to_h }.MUST eql(min: 42, max: nil, type: :number)

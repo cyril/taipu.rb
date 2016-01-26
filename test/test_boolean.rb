@@ -2,10 +2,12 @@ require_relative File.join 'support', 'coverage'
 require_relative File.join '..', 'lib', 'taipu'
 require 'spectus'
 
+include Spectus
+
 subject = Taipu::Boolean.new
 
-Spectus.this { subject.valid?(true) }.MUST :BeTrue
-Spectus.this { subject.valid?(false) }.MUST :BeTrue
-Spectus.this { subject.valid?('foo') }.MUST :BeFalse
+it { subject.valid?(true) }.MUST be_true
+it { subject.valid?(false) }.MUST be_true
+it { subject.valid?('foo') }.MUST be_false
 
-Spectus.this { subject.to_h }.MUST Eql: { type: :boolean }
+it { subject.to_h }.MUST eql(type: :boolean)
